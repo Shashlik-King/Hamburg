@@ -1,0 +1,4 @@
+outputfile.out
+*TriaxialE1
+2000 100 0.1 : 10
+-0.02 # lateral stress is assumed constant

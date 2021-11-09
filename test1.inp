@@ -1,0 +1,10 @@
+outputFile.out
+*LinearLoad
+1000 100 1.0 1000 // ninc, maxiter, deltaTime
+*Cartesian
+0 -0.1 // 1-stress/0-strain controlled, amplitude, phase, linear load ->comp. 11
+1 0.0 // 1-stress/0-strain controlled, amplitude, phase, linear load ->comp. 22
+1 0.0 // 1-stress/0-strain controlled, amplitude, phase, linear load ->comp. 33
+0 0.0 // 1-stress/0-strain controlled, amplitude, phase, linear load ->comp. 12
+0 0.0 // 1-stress/0-strain controlled, amplitude, phase, linear load ->comp. 13
+0 0.0 // 1-stress/0-strain controlled, amplitude, phase, linear load ->comp. 23

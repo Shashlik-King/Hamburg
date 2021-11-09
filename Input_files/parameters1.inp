@@ -1,0 +1,24 @@
+HardeningSoil64.dll // cmname (This is an end-of-line comment)   
+22 // nprops   
+57000 //   Props(1)    E50
+57000//   Props(2)  Edeo
+171000 //   Props(3)     Eur
+0.4031 //   Props(4)  m
+39.88 //   Props(5)  phi  
+9.0 //   Props(6)   psi
+0.1 //   Props(7)  c
+0.0 //   Props(8)  posion ratioi
+100 //   Props(9)  pref
+0.8813 //   Props(10)  Rf
+0 //   Props(11)  Tension cut oof 
+1 //   Props(12)  OCR 
+0.0 //   Props(13)  POP
+0.3589 //   Props(14)  K0_nc
+0.497 //   Props(15)  nu_und          
+0.56 //   Props(16) void ratio inital 
+0.88 //   Props(17)  max
+1 //   Props(18)      flow rule / 0 Hs  or  1 Hs small
+124600 //   Props(19)   G0
+0.0001053 //   Props(20)   gamma 0.7
+0 //   Props(21)   0  always 
+1       //  model number: 1
