@@ -42,16 +42,10 @@ print(db_connection_str)
 db_connection = create_engine(db_connection_str)
 df_CPT = pd.read_sql("SELECT * FROM cpt_data WHERE (Project_name,bh,rev) = ('EW2','BH-46','01') or (Project_name,bh,rev) = ('TPC2','DH-01','01')", con=db_connection)
 df_Strata = pd.read_sql("SELECT * FROM stratigraphy WHERE (project_name,bh,rev) = ('EW2','BH-46','01') or (project_name,bh,rev) = ('TPC2','DH-01','01')", con=db_connection)
-# df_CPT.columns += '_1'
-# df_Strata.columns += '_2'
+
 df_CPT=df_CPT.add_prefix('1_')
 df_Strata=df_Strata.add_prefix('2_')
 
-
-
-# idx = pd.IntervalIndex.from_arrays(df_Strata['top'], df_Strata['bottom'], closed='both')
-# unit = df_Strata.iloc[idx.get_indexer(df_CPT.depth), 'unit']
-# df_CPT['unit'] = unit.to_numpy()
 
 Strata_top = df_Strata['2_top'].values
 Strata_bottom = df_Strata['2_bottom'].values
@@ -64,19 +58,15 @@ CPT_bh = df_CPT['1_bh'].values[:, None]
 
 mask = (Strata_projectname == CPT_projectname) & (Strata_bh == CPT_bh) & (Strata_top <= CPT_depth) & (CPT_depth <= Strata_bottom)
 CPT_Unit = np.argmax(mask, axis=1)
-print(CPT_Unit)
 df_CPTOutput=df_CPT.assign(CPT_Unit=CPT_Unit).join(df_Strata, on='CPT_Unit')
-cols = df_CPTOutput.columns.tolist()
-cols = cols[0:25] + cols[33:]
-print(cols)
 
 
-# #Trial1
-# idx = pd.IntervalIndex.from_arrays(df_Strata['top'], df_Strata['bottom'], closed='both')
-# df_Strata.index=idx
-# df_CPT['unit']=df_Strata.loc[df_CPT.depth,'unit'].values
 
-# #Trial2
-# df_Strata['depth']=df_Strata['bottom']
-# # pd.merge_asof(df_CPT,df_Strata[['depth','bottom']].sort_values('depth'),on='depth')
-# pd.merge_asof(df_CPT,df_Strata[['depth','bottom']].sort_values('bottom'),on='bottom',direction ='forward',allow_exact_matches =True)
+df_CPTOutput.drop(df_CPTOutput.columns[26:32], axis=1, inplace=True)
+df_CPTOutput.drop(df_CPTOutput.columns[27:32], axis=1, inplace=True)
+df_CPTOutput.drop(df_CPTOutput.columns[25], axis=1, inplace=True)
+df_CPTOutput.columns = df_CPTOutput.columns.str.lstrip("1_")
+df_CPTOutput.columns = df_CPTOutput.columns.str.lstrip("2_")
+print(df_CPTOutput)
+
+
