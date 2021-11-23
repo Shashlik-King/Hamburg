@@ -17,13 +17,61 @@ from scipy.stats import kde
 from scipy.stats import gaussian_kde
 
 def OCR_Fun_PL(depth,A,P):
+    '''
+    
+
+    Parameters
+    ----------
+    depth : TYPE
+        DESCRIPTION.
+    A : TYPE
+        DESCRIPTION.
+    P : TYPE
+        DESCRIPTION.
+
+    Returns
+    -------
+    OCR_fit : TYPE
+        DESCRIPTION.
+
+    '''
     OCR_fit=A*(depth**P)
     return OCR_fit
 def OCR_Fun_Pc(depth,A):
+    '''
+    
+
+    Parameters
+    ----------
+    depth : TYPE
+        DESCRIPTION.
+    A : TYPE
+        DESCRIPTION.
+
+    Returns
+    -------
+    OCR_fit : TYPE
+        DESCRIPTION.
+
+    '''
     OCR_fit = (depth*10 + A)/(depth*10)
     return OCR_fit
 
 def unique(list1): 
+    '''
+    
+
+    Parameters
+    ----------
+    list1 : TYPE
+        DESCRIPTION.
+
+    Returns
+    -------
+    unique_list : TYPE
+        DESCRIPTION.
+
+    '''
   
     # intilize a null list 
     unique_list = [] 
@@ -43,6 +91,7 @@ BH_names = []
 name = []
 
 # get_ipython().run_line_magic('matplotlib', 'qt')
+
 
 loc_excel="CPT_location.xlsx"
 xl = pd.ExcelFile(loc_excel)
@@ -211,7 +260,13 @@ for i in range(len(units)):
         
 
         ##########  Old formulation which was QAed by SPSO
+ 
+        ''' calculation of the dr
         
+        '''
+ 
+    
+ 
         
         Dr_fugro_dry= (1/0.0296)*np.log((qc/(2.494*(0.01*sigmv*((1+2*K0_dr)/3))**0.46)))
         
@@ -223,11 +278,6 @@ for i in range(len(units)):
         Dr_fugro_sat_wrong = ( 0.01*(-1.87+2.32*np.log( 1000.0*qc/( (100*sigmv)**0.5 )  ) ) + 1 )*Dr_fugro_dry_wrong     ##### Wrong formulation used in the prious versions of submitions
         
 
-        
-        
-        
-        
-        
         
         
         
