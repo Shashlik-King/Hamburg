@@ -34,12 +34,15 @@ from scipy.stats import linregress
 from sqlalchemy import create_engine
 import pymysql
 import mysql.connector
+import itertools
+
 
 
 db_connection_str = 'mysql+pymysql://owdb_user:ituotdowdb@172.30.112.80/owdb'
 print(db_connection_str)
 
 db_connection = create_engine(db_connection_str)
+
 df_CPT = pd.read_sql("SELECT * FROM cpt_data WHERE (Project_name,bh,rev) = ('EW2','BH-46','01') or (Project_name,bh,rev) = ('TPC2','DH-01','01')", con=db_connection)
 df_Strata = pd.read_sql("SELECT * FROM stratigraphy WHERE (project_name,bh,rev) = ('EW2','BH-46','01') or (project_name,bh,rev) = ('TPC2','DH-01','01')", con=db_connection)
 
