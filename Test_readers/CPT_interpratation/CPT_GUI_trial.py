@@ -45,7 +45,9 @@ import cv2
 class DrawLineWidget(object):
     def __init__(self):
         self.original_image = cv2.imread('im.jpg')
-        self.original_image  = cv2.resize(self.original_image,None,fx=1, fy=1, interpolation = cv2.INTER_CUBIC)
+        self.original_image  = cv2.resize(self.original_image,None,(0,0),fx=1, fy=1, interpolation = cv2.INTER_CUBIC)
+        self.original_image = cv2.resize(self.original_image,(500, 500))
+        # self.original_image  = cv2.resize(self.original_image,None,fx=1, fy=1, interpolation = cv2.INTER_CUBIC)
         self.clone = self.original_image.copy()
 
         cv2.namedWindow('image')

@@ -130,7 +130,7 @@ inventory_excel="CPT_location.xlsx"
 xl = pd.ExcelFile(inventory_excel)
 excel_sheets=(xl.sheet_names)
 Input=pd.read_excel(inventory_excel,sheet_name="Units_data",index_col=0,usecols=None)
-
+print(Input)
 
 
 # Driver program
