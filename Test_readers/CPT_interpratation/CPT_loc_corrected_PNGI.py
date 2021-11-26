@@ -93,7 +93,7 @@ name = []
 # get_ipython().run_line_magic('matplotlib', 'qt')
 
 
-loc_excel="CPT_location.xlsx"
+loc_excel="Backup.xlsx"
 xl = pd.ExcelFile(loc_excel)
 excel_sheets=(xl.sheet_names)
 
@@ -126,7 +126,7 @@ def getList(my_dict):
 
 
 
-inventory_excel="CPT_location.xlsx"
+inventory_excel="Backup.xlsx"
 xl = pd.ExcelFile(inventory_excel)
 excel_sheets=(xl.sheet_names)
 Input=pd.read_excel(inventory_excel,sheet_name="Units_data",index_col=0,usecols=None)
@@ -171,8 +171,9 @@ for i in range(len(units)):
         df2=df2[df2["SBH_NQT"] > 0]
         df2=df2[df2["SBH_RES"] > 0] 
         # df2=df2[df2["SBH_FRES"] > 0]
-        
+        print(df2)
         depth=np.array(df2["Depth [m]"])
+        
         qt=np.array(df2["SBH_QNET"])
         qc=np.array(df2["SBH_RES"])
         nqt = np.array(df2["SBH_NQT"]) 

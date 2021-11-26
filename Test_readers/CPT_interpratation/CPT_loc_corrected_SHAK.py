@@ -128,7 +128,7 @@ for i in range(len(locations)):
        
     for j in range(len(soil_units)):
         my_dict[soil_units[j]]=df0[df0["Unit"]==soil_units[j]]
-        
+# print(my_dict)        
 def getList(my_dict):
       
     return [*my_dict]
@@ -139,7 +139,7 @@ inventory_excel="CPT_location.xlsx"
 xl = pd.ExcelFile(inventory_excel)
 excel_sheets=(xl.sheet_names)
 Input=pd.read_excel(inventory_excel,sheet_name="Units_data",index_col=0,usecols=None)
-print(Input)
+# print(Input)
 
 
 
@@ -148,6 +148,7 @@ print(Input)
 df_post_processed_data = pd.DataFrame({"depth": [], "qc": [] , "fs":[] , "qnet":[],"phi":[],"DR":[],"K0_NC":[],"K0_OC":[],"OCR":[],"SU":[],"Sigma_v":[],"Unit":[] })
 
 units = (getList(my_dict))   
+# print(units)
 colors = ['#1f27b4','#ff1f0e','#2ca02c','#d69728','#9497bd','#8c564b','#e377c2','#7f7f5f','#bcbd72','#17becf','#1a55FF','#8B008B','#008000','#FF4500', '#000000','#D2691E', '#ADFF2F', '#AFEEEE','#FFFF00']
 col=0
 fig, axs = plt.subplots(1,6,figsize=(25,20))
@@ -173,18 +174,21 @@ for i in range(len(units)):
         phi_Dr = Input[Soil_unit]["Friction_Dr"]
         
         df = my_dict[Soil_unit]
-        
+        # print(df)
         df2=df[df["Depth [m]"] > min_depth] 
+        # print(df2)
         df2=df2[df2["Depth [m]"] < max_depth]
         df2=df2[df2["SBH_QNET"] < 100]
         df2=df2[df2["SBH_QNET"] > 0]
-        df2=df2[df2["SBH_NQT"] > 0]
+        # df2=df2[df2["SBH_NQT"] >= 0]
         df2=df2[df2["SBH_RES"] > 0] 
         # df2=df2[df2["SBH_FRES"] > 0]
         
         depth=np.array(df2["Depth [m]"])
+        # print(depth)
         qt=np.array(df2["SBH_QNET"])
         qc=np.array(df2["SBH_RES"])
+        # print(qc)
         nqt = np.array(df2["SBH_NQT"]) 
         fs = np.array(df2["SBH_FRES"])
         sigmv = np.array(df2["SIGMA_V"]) 

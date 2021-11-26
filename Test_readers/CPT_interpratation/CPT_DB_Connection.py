@@ -92,14 +92,15 @@ def connection():
     df_CPTOutput.drop(df_CPTOutput.columns[20:24], axis=1, inplace=True)
     df_CPTOutput.drop(df_CPTOutput.columns[2:4], axis=1, inplace=True)
     df_CPTOutput.drop(df_CPTOutput.columns[11:13], axis=1, inplace=True)
-    df_CPTOutput.drop(df_CPTOutput.columns[1], axis=1, inplace=True)
+    df_CPTOutput.drop(df_CPTOutput.columns[0], axis=1, inplace=True)
     
-    df_CPTOutput.rename(columns={'Project_name': 'BH','depth': 'Depth [m]','qc': 'SBH_RES','fres': 'SBH_FRES','pwp2': 'SBH_PWP2',
+    df_CPTOutput.rename(columns={'bh': 'BH','depth': 'Depth [m]','qc': 'SBH_RES','fres': 'SBH_FRES','pwp2': 'SBH_PWP2',
                         'frr': 'SBH_FRR','qt': 'SBH_QT','ft': 'SBH_FT','qe': 'SBH_QE','bden': 'SBH_BDEN','qnet': 'SBH_QNET',
                         'frrc': 'SBH_FRRC','bq': 'SBH_BQ','nqt': 'SBH_NQT','nfr': 'SBH_NFR','unit': 'Unit'},
               inplace=True, errors='raise')
     df_CPTOutput = df_CPTOutput.replace(to_replace = ["None"], value=0)
     df_CPTOutput = df_CPTOutput.replace(to_replace = np.nan, value = 0)
+    df_CPTOutput['Unit'] = df_CPTOutput['Unit'].astype(str) + "S"
     print(df_CPTOutput)
     return df_CPTOutput
     
