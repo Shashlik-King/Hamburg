@@ -27,11 +27,12 @@ if size(data,1) > 3
     end
     
     %% Generate strings and save into database
+    user = getenv('username'); 
     mysqlstr_ini = ['INSERT INTO ',table,'(ProjID,Rev'];
     for i = 2:size(data,2)
         mysqlstr_ini = [mysqlstr_ini,',',data{1,i}];
     end
-    mysqlstr_ini = [mysqlstr_ini,') VALUES '];
+    mysqlstr_ini = [mysqlstr_ini,',inserted_by) VALUES '];
     mysqlstr_write = [mysqlstr_ini];
     dataLoop = data(4:end,2:end);
     for i = 1:size(dataLoop,1)
@@ -60,7 +61,7 @@ if size(data,1) > 3
                 end
             end
         end
-        mysqlstr = [mysqlstr,')'];
+        mysqlstr = [mysqlstr,',"',user,'")'];
         mysqlstr_write = [mysqlstr_write, mysqlstr];
     end
     mysqlstr_write = [mysqlstr_write,';'];      % End syntax

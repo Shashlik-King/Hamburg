@@ -27,7 +27,7 @@ for i = 1:length(pos)
             if counter == 1
                 errorListing = {pos{i},groups{j},{ME}};
             else
-                errorListing = {pos{i},groups{j},{ME}};
+                errorListingNew = {pos{i},groups{j},{ME}};
                 errorListing = [errorListing;errorListingNew];
             end
             

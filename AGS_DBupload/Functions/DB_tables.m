@@ -6,8 +6,19 @@ GROUPS = {'LOCA';
     'GEOL';
     'DETL';
     'DREM';
+    % LAB
+    'GRAG';
+    'GRAT';
+    'GCHM';
+    'RELD';
+    'LPDN';
+    'LPEN';
+    'LRES';
+    'LVAN';
+    'LDEN';
     };
 
+%% CPT AND BH groups
 COLUMNS.LOCA = [%{'HEADING'},{'variable name'},{'Unit'};
     % LOCA group
     {'LOCA_ID'},{'LOCA_ID',{''}};
@@ -151,3 +162,233 @@ COLUMNS.DREM = [
     {'DREM_REM'},{'DREM_REM',{''}};
     {'FILE_FSET'},{'FILE_FSET',{''}};
     ];
+
+
+%% LAB data
+COLUMNS.GRAG = [
+    {'LOCA_ID'},{'LOCA_ID',{''}};
+    {'SAMP_TOP'},{'DREM_TOP',{'m'}};
+    {'SAMP_REF'},{'DREM_BASE',{''}};
+    {'SAMP_TYPE'},{'DREM_REM',{''}};
+    {'SAMP_ID'},{'FILE_FSET',{''}};
+    {'SPEC_REF'},{'LOCA_ID',{''}};
+    {'SPEC_DPTH'},{'DREM_TOP',{'m'}};
+    {'SPEC_DESC'},{'DREM_BASE',{''}};
+    {'SPEC_PREP'},{'DREM_REM',{''}};
+    {'GRAG_UC'},{'FILE_FSET',{'-'}};
+    {'GRAG_VCRE'},{'LOCA_ID',{'%'}};
+    {'GRAG_GRAV'},{'DREM_TOP',{'%'}};
+    {'GRAG_SAND'},{'DREM_BASE',{'%'}};
+    {'GRAG_SILT'},{'DREM_REM',{'%'}};
+    {'GRAG_CLAY'},{'FILE_FSET',{'%'}};
+    {'GRAG_FINE'},{'LOCA_ID',{'%'}};
+    {'GRAG_REM'},{'DREM_TOP',{''}};
+    {'GRAG_METH'},{'DREM_BASE',{''}};
+    {'GRAG_LAB'},{'DREM_REM',{''}};
+    {'GRAG_CRED'},{'FILE_FSET',{''}};    
+    {'TEST_STAT'},{'TEST_STAT',{''}};
+    {'FILE_FSET'},{'FILE_FSET',{''}};    
+    ];
+
+
+COLUMNS.GRAT = [
+    {'LOCA_ID'},{'LOCA_ID',{''}};
+    {'SAMP_TOP'},{'DREM_TOP',{'m'}};
+    {'SAMP_REF'},{'DREM_BASE',{''}};
+    {'SAMP_TYPE'},{'DREM_REM',{''}};
+    {'SAMP_ID'},{'FILE_FSET',{''}};
+    {'SPEC_REF'},{'LOCA_ID',{''}};
+    {'SPEC_DPTH'},{'DREM_TOP',{'m'}};
+    {'GRAT_SIZE'},{'DREM_BASE',{'mm'}};
+    {'GRAT_PERP'},{'DREM_REM',{'%'}};
+    {'GRAT_TYPE'},{'FILE_FSET',{''}};
+    {'GRAT_REM'},{'LOCA_ID',{''}};
+    {'FILE_FSET'},{'FILE_FSET',{''}};    
+    ];
+
+
+COLUMNS.GCHM = [
+    {'LOCA_ID'},{'LOCA_ID',{''}};
+    {'SAMP_TOP'},{'DREM_TOP',{'m'}};
+    {'SAMP_REF'},{'DREM_BASE',{''}};
+    {'SAMP_TYPE'},{'DREM_REM',{''}};
+    {'SAMP_ID'},{'FILE_FSET',{''}};
+    {'SPEC_REF'},{'LOCA_ID',{''}};
+    {'SPEC_DPTH'},{'DREM_TOP',{'m'}};
+    {'SPEC_DESC'},{'DREM_BASE',{''}};
+    {'SPEC_PREP'},{'DREM_REM',{''}};
+    {'GCHM_CODE'},{'FILE_FSET',{''}};
+    {'GCHM_METH'},{'LOCA_ID',{''}};
+    {'GCHM_TTYP'},{'DREM_TOP',{''}};
+    {'GCHM_RESL'},{'DREM_BASE',{''}};
+    {'GCHM_UNIT'},{'DREM_REM',{''}};
+    {'GCHM_NAME'},{'FILE_FSET',{''}};
+    {'GCHM_REM'},{'LOCA_ID',{''}};
+    {'GCHM_LAB'},{'DREM_TOP',{''}};
+    {'GCHM_CRED'},{'DREM_BASE',{''}};
+    {'GCHM_RTXT'},{'DREM_REM',{''}};
+    {'GCHM_DLM'},{'FILE_FSET',{''}};    
+    {'TEST_STAT'},{'TEST_STAT',{''}};
+    {'FILE_FSET'},{'FILE_FSET',{''}};    
+    ];
+
+
+COLUMNS.RELD = [
+    {'LOCA_ID'},{'LOCA_ID',{''}};
+    {'SAMP_TOP'},{'DREM_TOP',{'m'}};
+    {'SAMP_REF'},{'DREM_BASE',{''}};
+    {'SAMP_TYPE'},{'DREM_REM',{''}};
+    {'SAMP_ID'},{'FILE_FSET',{''}};
+    {'SPEC_REF'},{'LOCA_ID',{''}};
+    {'SPEC_DPTH'},{'DREM_TOP',{'m'}};
+    {'SPEC_DESC'},{'DREM_BASE',{''}};
+    {'SPEC_PREP'},{'DREM_REM',{''}};
+    {'RELD_DMAX'},{'FILE_FSET',{'Mg/m3'}};
+    {'RELD_375'},{'LOCA_ID',{'%'}};
+    {'RELD_063'},{'DREM_TOP',{'%'}};
+    {'RELD_020'},{'DREM_BASE',{'%'}};
+    {'RELD_DMIN'},{'DREM_REM',{'Mg/m3'}};
+    {'RELD_REM'},{'FILE_FSET',{''}};
+    {'RELD_METH'},{'LOCA_ID',{''}};
+    {'RELD_LAB'},{'DREM_TOP',{''}};
+    {'RELD_CRED'},{'DREM_BASE',{''}};
+    {'RELD_DEV'},{'DREM_REM',{''}};
+    {'TEST_STAT'},{'TEST_STAT',{''}};
+    {'FILE_FSET'},{'FILE_FSET',{''}};    
+    ];
+
+COLUMNS.LPDN = [
+    {'LOCA_ID'},{'LOCA_ID',{''}};
+    {'SAMP_TOP'},{'DREM_TOP',{'m'}};
+    {'SAMP_REF'},{'DREM_BASE',{''}};
+    {'SAMP_TYPE'},{'DREM_REM',{''}};
+    {'SAMP_ID'},{'FILE_FSET',{''}};
+    {'SPEC_REF'},{'LOCA_ID',{''}};
+    {'SPEC_DPTH'},{'DREM_TOP',{'m'}};
+    {'SPEC_DESC'},{'DREM_BASE',{''}};
+    {'SPEC_PREP'},{'DREM_REM',{''}};
+    {'SPEC_BASE'},{'FILE_FSET',{'m'}};
+    {'LPDN_PDEN'},{'LOCA_ID',{'Mg/m3'}};
+    {'LPDN_TYPE'},{'DREM_TOP',{''}};
+    {'LPDN_REM'},{'DREM_BASE',{''}};
+    {'LPDN_METH'},{'DREM_REM',{''}};
+    {'LPDN_LAB'},{'FILE_FSET',{''}};
+    {'LPDN_CRED'},{'LOCA_ID',{''}};
+    {'LPDN_DEV'},{'DREM_TOP',{''}};
+    {'LPDN_PVOL'},{'DREM_REM',{''}};
+    {'LPDN_GAS'},{'DREM_REM',{''}};
+    {'TEST_STAT'},{'TEST_STAT',{''}};
+    {'FILE_FSET'},{'FILE_FSET',{''}};    
+    ];
+
+COLUMNS.LPEN = [
+    {'LOCA_ID'},{'LOCA_ID',{''}};
+    {'SAMP_TOP'},{'DREM_TOP',{'m'}};
+    {'SAMP_REF'},{'DREM_BASE',{''}};
+    {'SAMP_TYPE'},{'DREM_REM',{''}};
+    {'SAMP_ID'},{'FILE_FSET',{''}};
+    {'SPEC_REF'},{'LOCA_ID',{''}};
+    {'SPEC_DPTH'},{'DREM_TOP',{'m'}};
+    {'SPEC_DESC'},{'DREM_BASE',{''}};
+    {'SPEC_PREP'},{'DREM_REM',{''}};
+    {'SPEC_BASE'},{'FILE_FSET',{'m'}};
+    {'LPEN_PPEN'},{'LOCA_ID',{'kPa'}};
+    {'LPEN_MC'},{'DREM_TOP',{'%'}};
+    {'LPEN_REM'},{'DREM_BASE',{''}};
+    {'LPEN_METH'},{'DREM_REM',{''}};
+    {'LPEN_LAB'},{'FILE_FSET',{''}};
+    {'LPEN_CRED'},{'LOCA_ID',{''}};
+    {'LPEN_DEV'},{'DREM_TOP',{''}};
+    {'TEST_STAT'},{'TEST_STAT',{''}};
+    {'FILE_FSET'},{'FILE_FSET',{''}};    
+    ];
+
+COLUMNS.LRES = [
+    {'LOCA_ID'},{'LOCA_ID',{''}};
+    {'SAMP_TOP'},{'DREM_TOP',{'m'}};
+    {'SAMP_REF'},{'DREM_BASE',{''}};
+    {'SAMP_TYPE'},{'DREM_REM',{''}};
+    {'SAMP_ID'},{'FILE_FSET',{''}};
+    {'SPEC_REF'},{'LOCA_ID',{''}};
+    {'SPEC_DPTH'},{'DREM_TOP',{'m'}};
+    {'SPEC_DESC'},{'DREM_BASE',{''}};
+    {'SPEC_PREP'},{'DREM_REM',{''}};
+    {'SPEC_BASE'},{'FILE_FSET',{'m'}};
+    {'LRES_BDEN'},{'LOCA_ID',{'Mg/m3'}};
+    {'LRES_DDEN'},{'DREM_TOP',{'Mg/m3'}};
+    {'LRES_MC'},{'DREM_BASE',{'%'}};
+    {'LRES_COND'},{'DREM_REM',{''}};
+    {'LRES_LRES'},{'FILE_FSET',{'ohm m'}};
+    {'LRES_CDIA'},{'LOCA_ID',{'mm'}};
+    {'LRES_CCSA'},{'DREM_TOP',{'mm2'}};
+    {'LRES_CLEN'},{'TEST_STAT',{'mm'}};
+    {'LRES_TEMP'},{'FILE_FSET',{'DegC'}};   
+    {'LRES_ELEC'},{'LOCA_ID',{''}};
+    {'LRES_PENT'},{'DREM_TOP',{''}};
+    {'LRES_CSHP'},{'DREM_BASE',{''}};
+    {'LRES_WAT'},{'DREM_REM',{'ml'}};
+    {'LRES_WRES'},{'FILE_FSET',{'ohm m'}};
+    {'LRES_PART'},{'LOCA_ID',{''}};
+    {'LRES_REM'},{'DREM_TOP',{''}};
+    {'LRES_METH'},{'TEST_STAT',{''}};
+    {'LRES_LAB'},{'FILE_FSET',{''}};       
+    {'LRES_CRED'},{'TEST_STAT',{''}};
+    {'LRES_DEV'},{'FILE_FSET',{''}};       
+    {'TEST_STAT'},{'TEST_STAT',{''}};
+    {'FILE_FSET'},{'FILE_FSET',{''}};       
+    ];
+
+
+COLUMNS.LVAN = [
+    {'LOCA_ID'},{'LOCA_ID',{''}};
+    {'SAMP_TOP'},{'DREM_TOP',{'m'}};
+    {'SAMP_REF'},{'DREM_BASE',{''}};
+    {'SAMP_TYPE'},{'DREM_REM',{''}};
+    {'SAMP_ID'},{'FILE_FSET',{''}};
+    {'SPEC_REF'},{'LOCA_ID',{''}};
+    {'SPEC_DPTH'},{'DREM_TOP',{'m'}};
+    {'SPEC_DESC'},{'DREM_BASE',{''}};
+    {'SPEC_PREP'},{'DREM_REM',{''}};
+    {'SPEC_BASE'},{'FILE_FSET',{'m'}};
+    {'LVAN_VNPK'},{'LOCA_ID',{'kPa'}};
+    {'LVAN_VNRM'},{'DREM_TOP',{'kPa'}};
+    {'LVAN_MC'},{'DREM_BASE',{'%'}};
+    {'LVAN_SIZE'},{'DREM_REM',{'mm'}};
+    {'LVAN_VLEN'},{'FILE_FSET',{'mm'}};
+    {'LVAN_REM'},{'LOCA_ID',{''}};
+    {'LVAN_METH'},{'DREM_TOP',{''}};
+    {'LVAN_LAB'},{'DREM_REM',{''}};
+    {'LVAN_CRED'},{'DREM_REM',{''}};
+    {'LVAN_DEV'},{'TEST_STAT',{''}};
+    {'LVAN_TYPE'},{'FILE_FSET',{''}};     
+    {'TEST_STAT'},{'TEST_STAT',{''}};
+    {'FILE_FSET'},{'FILE_FSET',{''}};    
+    ];
+
+COLUMNS.LDEN = [
+    {'LOCA_ID'},{'LOCA_ID',{''}};
+    {'SAMP_TOP'},{'DREM_TOP',{'m'}};
+    {'SAMP_REF'},{'DREM_BASE',{''}};
+    {'SAMP_TYPE'},{'DREM_REM',{''}};
+    {'SAMP_ID'},{'FILE_FSET',{''}};
+    {'SPEC_REF'},{'LOCA_ID',{''}};
+    {'SPEC_DPTH'},{'DREM_TOP',{'m'}};
+    {'SPEC_DESC'},{'DREM_BASE',{''}};
+    {'SPEC_PREP'},{'DREM_REM',{''}};
+    {'SPEC_BASE'},{'FILE_FSET',{'m'}};
+    {'LDEN_TYPE'},{'LOCA_ID',{''}};
+    {'LDEN_COND'},{'DREM_TOP',{''}};
+    {'LDEN_SMTY'},{'DREM_BASE',{''}};
+    {'LDEN_MC'},{'DREM_REM',{'%'}};
+    {'LDEN_BDEN'},{'FILE_FSET',{'Mg/m3'}};
+    {'LDEN_DDEN'},{'LOCA_ID',{'Mg/m3'}};
+    {'LDEN_REM'},{'DREM_TOP',{''}};
+    {'LDEN_METH'},{'DREM_REM',{''}};
+    {'LDEN_LAB'},{'DREM_REM',{''}};
+    {'LDEN_CRED'},{'TEST_STAT',{''}};
+    {'LDEN_DEV'},{'FILE_FSET',{''}};     
+    {'TEST_STAT'},{'TEST_STAT',{''}};
+    {'FILE_FSET'},{'FILE_FSET',{''}};    
+    ];
+    
+

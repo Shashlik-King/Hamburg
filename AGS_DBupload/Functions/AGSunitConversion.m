@@ -44,6 +44,13 @@ else
     Unit.percentage = [{''},{'%'};
         {1/100}, {1}];
     
+    % Stresses - reference of [MPa]
+    Unit.temperature = [{'degC'};
+        {1}];
+    
+    % Stresses - reference of [MPa]
+    Unit.resistivity = [{'ohm m'};
+        {1}];
     
     
     %% Unit factor calculation

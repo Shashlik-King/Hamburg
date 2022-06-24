@@ -15,14 +15,14 @@ settings.db.Pass ='ituotdowdb';   % Database pass
 % Upload and revision
 settings.upload = 1;            % Switch
 settings.delete = 1;            % Switch - allow script to delete in database if existing revision, project and location ID exist
-settings.ProjectID = "TPC2";
+settings.ProjectID = "TEST";
 settings.rev = '01';
 
 % Folders
-Folder.Data.CPT = 'Files\CPT';
+Folder.Data = 'Files';
 
 %% Read AGS data
-data = AGSread(settings,Folder,'CPT');         % Function for reading CPT data from AGS format
+data = AGSread(settings,Folder);         % Function for reading CPT data from AGS format
 
 %% CREATE LOG FOR DATA ERRORS
 errorList = errorLOG(data.disOverview); 
@@ -33,4 +33,5 @@ if settings.upload
 end
 
 %% Export log of run
-
+% fmt = "yyyy "
+save(strcat('log (',string(datetime('now')),')'))

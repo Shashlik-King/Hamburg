@@ -1,4 +1,4 @@
-function data = AGSread(settings,Folder,DataType)
+function data = AGSread(settings,Folder)
 %%%-------------------------------------------------------------------------%%%
 % data = ReaderAGS(settings,Folder,values)
 % Function for loading in all data from AGS files
@@ -12,15 +12,10 @@ function data = AGSread(settings,Folder,DataType)
 % Coded by CONN                     06-07-2020
 
 %% Identify filenames in folder
-if strcmp(DataType,'LAB')
-    listingCheck = dir(Folder.Data.LAB);             % Get info on files in folder
-    FolderRead = Folder.Data.LAB;
-elseif strcmp(DataType,'CPT')
-    listingCheck = dir(Folder.Data.CPT);             % Get info on files in folder
-    FolderRead = Folder.Data.CPT;
-else
-    error('No input defined')
-end
+FolderRead = Folder.Data; 
+listingCheck = dir(FolderRead);
+
+
 listingCheck = {listingCheck.name};          % Get names of files in folder
 
 pattern = ".AGS";                            % Search pattern (change if received AGS files is other file format than .AGS)
