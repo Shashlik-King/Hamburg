@@ -1,0 +1,4 @@
+Project: 	Test
+Rev:		01
+
+WTG_ID:		WTG01,WTG02,WTG03,WTG04
