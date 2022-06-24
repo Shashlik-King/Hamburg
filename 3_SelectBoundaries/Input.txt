@@ -1,0 +1,5 @@
+{
+"plots.test":		1,
+"savePlots":		1,
+"crop":			1
+}
