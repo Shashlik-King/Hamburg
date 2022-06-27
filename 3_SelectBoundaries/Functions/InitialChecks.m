@@ -15,6 +15,10 @@ if settings.plots || settings.savePlots
     end
 end
 
+if ~exist('Log', 'dir')
+    mkdir('Log')
+end
+
 %% Turn MATLAB warnings off which does not affect the code from running 
 % Turn off warning for function for making plot full screen in LayerSelection plot
 id = 'MATLAB:HandleGraphics:ObsoletedProperty:JavaFrame';

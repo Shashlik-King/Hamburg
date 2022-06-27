@@ -1,5 +1,39 @@
-{
-"plots.test":		1,
-"savePlots":		1,
-"crop":			1
-}
+
+settings.Proj 		= 'Test';     % Project ID
+settings.rev 		= '01';        % Main revision from "ControlPanel" DB 
+settings.locAll 	= 0;        % 1) Will consider all WTG positions for Project and Rev in "Overview_WTG"; 0) Will use defined positions below
+settings.loc 		= {'WTG01'};
+settings.upload 	= 1;        % Upload selected stratigraphy to database
+settings.delete 	= 1;        % Allow script to delete stratigraphy for positions considered
+
+settings.runLayerSelec 	= 0;         % 1: Select layers when running routine, 0: Run routine with previously defined layers
+
+%% Settings - plot
+settings.plots          = 0;        % 1: Make plots during the routine; 0: No plots generated
+settings.savePlots      = 1;        % 1: Save plots generated from routine; 0: No plots saved
+settings.crop           = 1;        % 1: Save a cropped version of the images
+
+
+%% Activate plots
+plots.Schneider         = 0; 
+plots.Robertson1986     = 0; 
+plots.Robertson1986_Rf  = 0; 
+plots.Robertson1990_2010= 0; 
+plots.Robertson1990_Bq  = 0; 
+plots.Robertson1990_Fr  = 0; 
+plots.Robertson2009     = 0; 
+plots.Jardine           = 1; 
+
+
+
+%% Database input
+settings.db.Name ='owdb';         % Database name
+settings.db.Serv ='DKLYCOPILOD1';  % Databse server
+settings.db.User ='owdb_user';    % Database user
+settings.db.Pass ='ituotdowdb';   % Database pass
+
+
+%% 
+values.unitWeight.water = 10;       % Water unit weight [kN/m3]
+values.unitWeight.soil  = 20;       % Soil unit weight (assumed) [kN/m3]
+values.P_a              = 101.3;    % Atmospheric pressure [kPa] (Converted to MPa in function)
