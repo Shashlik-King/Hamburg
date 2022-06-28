@@ -1,0 +1,15 @@
+settings.Proj = 'Test';             % Project ID
+settings.rev = '01';                % Main revision from "ControlPanel" DB 
+settings.revDat = '01';             % Revision for DB 
+settings.revWTG = '01';
+settings.locAll = 0;                % 1) Run for all WTG found in database; 0) Run for defined pos
+settings.loc = {'WTGB01'};
+settings.upload = 1;                
+settings.delete = 1;
+settings.maxDistance = 50;          % Maximum allowable distance between WTG position and test - 5*D recommended as limit 
+
+% Database input
+settings.db.Name ='owdb';           % Database name
+settings.db.Serv ='DKLYCOPILOD1';   % Databse server
+settings.db.User ='owdb_user';      % Database user
+settings.db.Pass ='ituotdowdb';     % Database pass

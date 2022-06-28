@@ -15,7 +15,7 @@ else
     settings.upload = 1;        % Upload selected stratigraphy to database
     settings.delete = 1;        % Allow script to delete stratigraphy for positions considered
     
-    settings.runLayerSelec = 0;         % 1: Select layers when running routine, 0: Run routine with previously defined layers
+    settings.runLayerSelec = 1;         % 1: Select layers when running routine, 0: Run routine with previously defined layers
     
     %%% Settings - plot
     settings.plots          = 1;        % 1: Make plots during the routine; 0: No plots generated

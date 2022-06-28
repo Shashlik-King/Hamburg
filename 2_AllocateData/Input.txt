@@ -1,11 +1,11 @@
 settings.Proj = 'Test';             % Project ID
-settings.rev = '01';                % Main revision from "ControlPanel" DB 
-settings.revDat = '01';             % Revision for DB 
-settings.revWTG = '01';
-settings.locAll = 0;                % 1) Run for all WTG found in database; 0) Run for defined pos
-settings.loc = {'WTGB01'};
-settings.upload = 1;                
-settings.delete = 1;
+settings.rev = '01';                % Main revision (ControlPanel) 
+settings.revDat = '01';             % Revision for DB (etc. LOCA)
+settings.revWTG = '01';		    % revision of WTG Layout (Overview_WTG)
+settings.locAll = 0;                % 1) Run for all WTG ID found in database for revision; 0) Run for defined pos
+settings.loc = {'WTGB01'};		% Define individual positions to consider
+settings.upload = 1;                % Upload the results to the database
+settings.delete = 1;		    % Allow the database to delete during the upload of data
 settings.maxDistance = 50;          % Maximum allowable distance between WTG position and test - 5*D recommended as limit 
 
 % Database input

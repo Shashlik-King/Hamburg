@@ -1,17 +1,16 @@
-
-settings.Proj 		= 'Test';     % Project ID
-settings.rev 		= '01';        % Main revision from "ControlPanel" DB 
+settings.Proj 		= 'Test';   % Project ID
+settings.rev 		= '01';     % Main revision from "ControlPanel" DB 
 settings.locAll 	= 0;        % 1) Will consider all WTG positions for Project and Rev in "Overview_WTG"; 0) Will use defined positions below
 settings.loc 		= {'WTG01'};
 settings.upload 	= 1;        % Upload selected stratigraphy to database
 settings.delete 	= 1;        % Allow script to delete stratigraphy for positions considered
 
-settings.runLayerSelec 	= 0;         % 1: Select layers when running routine, 0: Run routine with previously defined layers
+settings.runLayerSelec 	= 0;        % 1: Select layers when running routine, 0: Run routine with previously defined layers
 
 %% Settings - plot
 settings.plots          = 0;        % 1: Make plots during the routine; 0: No plots generated
 settings.savePlots      = 1;        % 1: Save plots generated from routine; 0: No plots saved
-settings.crop           = 1;        % 1: Save a cropped version of the images
+settings.crop           = 0;        % 1: Save a cropped version of the images
 
 
 %% Activate plots
@@ -28,7 +27,7 @@ plots.Jardine           = 1;
 
 %% Database input
 settings.db.Name ='owdb';         % Database name
-settings.db.Serv ='DKLYCOPILOD1';  % Databse server
+settings.db.Serv ='DKLYCOPILOD1'; % Databse server
 settings.db.User ='owdb_user';    % Database user
 settings.db.Pass ='ituotdowdb';   % Database pass
 

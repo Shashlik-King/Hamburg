@@ -1,15 +1,14 @@
-settings.runAll 	= 1; 			% Run all files in folder
-settings.runLoc 	= "";			% Files from folder to be specified
-
-% Database inpit
-settings.db.Name 	='owdb';         % Database name
-settings.db.Serv 	='DKLYCOPILOD1';  % Databse server
-settings.db.User 	='owdb_user';    % Database user
-settings.db.Pass 	='ituotdowdb';   % Database pass
-
+settings.runAll 	= 1; 		% Run all files in folder
+settings.runLoc 	= "";		% Files from folder to be specified
 
 % Upload and revision
-settings.upload 	= 1;            % Switch
+settings.upload 	= 1;            % Switch for uploading data to database
 settings.delete 	= 1;            % Switch - allow script to delete in database if existing revision, project and location ID exist
-settings.ProjectID 	= "TEST";
-settings.rev 		= '01';
+settings.ProjectID 	= "TEST";	% Project ID
+settings.rev 		= '01';		% Revision to save data in the database as
+
+% Database inpit
+settings.db.Name 	='owdb';        % Database name
+settings.db.Serv 	='DKLYCOPILOD1';% Databse server
+settings.db.User 	='owdb_user';   % Database user
+settings.db.Pass 	='ituotdowdb';  % Database pass
